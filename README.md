@@ -1,11 +1,12 @@
 # DX-Ball Game
 
 ## Developers:
-- Ryana Binte Imtiaz (Roll 48),
+- Ryana Binte Imtiaz (Roll 48)
 - Fardin Selim Khan (Roll 43)
 
-CSE-4169: Computer Graphics Lab
-Dept of Computer Science and Engineering, University of Dhaka
+## Computer Graphics Project
+- CSE-4169: Computer Graphics Lab
+- Dept of Computer Science and Engineering, University of Dhaka
 
 ## Game Controls:
 - **'LEFT Arrow' Key:** Move the paddle to the left.
