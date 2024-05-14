@@ -28,8 +28,8 @@ from OpenGL.GLU import *
 bx = 800        # Ball x-coordinate
 by = 100         # Ball y-coordinate
 br = 10         # Ball radius
-bdx = 0.2       # Ball x-axis velocity (reduced initial speed)
-bdy = 0.2       # Ball y-axis velocity (reduced initial speed)
+bdx = 0.3       # Ball x-axis velocity (reduced initial speed)
+bdy = 0.3       # Ball y-axis velocity (reduced initial speed)
 
 px = 750        # Paddle x-coordinate
 py = 00         # Paddle y-coordinate
@@ -85,7 +85,7 @@ def initialize():
     """
     if not glfw.init():
         return
-
+    
     glfw.window_hint(glfw.CONTEXT_VERSION_MAJOR, 2)
     glfw.window_hint(glfw.CONTEXT_VERSION_MINOR, 1)
     glfw.window_hint(glfw.OPENGL_PROFILE, glfw.OPENGL_ANY_PROFILE)
@@ -98,6 +98,7 @@ def initialize():
     glfw.make_context_current(window)
     glfw.set_key_callback(window, keyboard)
     glfw.set_framebuffer_size_callback(window, framebuffer_size_callback)
+    glfw.set_window_pos(window, 0, 50)
 
     glClearColor(0.0, 0.0, 0.0, 0.0)
     glMatrixMode(GL_PROJECTION)
@@ -248,8 +249,8 @@ def update(window, current_time):
 
         # Check for collision with the paddle for direction change of ball
         if (
-            bx >= px
-            and bx <= px + pw
+            bx >= px 
+            and bx <= px + pw 
             and by - br <= py + ph
         ):
             bdy *= -1
@@ -257,9 +258,9 @@ def update(window, current_time):
 
         # Check for collision with the paddle for manual speed increase
         if (
-            bx + br >= px
-            and bx - br <= px + pw
-            and by - br <= py + ph + 5
+            bx + br >= px - 10
+            and bx - br <= px + pw + 10
+            and by - br <= py + ph + 10
             and speed_boost_active
         ):
             increase_speed()
