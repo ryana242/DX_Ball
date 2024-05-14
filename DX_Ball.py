@@ -273,7 +273,7 @@ def update(window, current_time):
             bdy *= -1
             blx[hit_block_y][hit_block_x] = 0
             scr += (20*abs(bdx))  # Increament Score according to speed
-            print(f"Score: {scr}")  # Print score update to terminal
+            print(f"Score: {round(scr, 2)}")  # Print score update to terminal
 
         # Check for game over condition
         if by - br < 0:
